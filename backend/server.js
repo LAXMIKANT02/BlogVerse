@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
+import authRoutes from "./routes/auth.js";
+import postRoutes from "./routes/posts.js";
 
 dotenv.config();
 
@@ -11,6 +13,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use("/api/auth", authRoutes);
+app.use("/api/posts", postRoutes);
 
 app.get("/", (req, res) => {
   res.send("BlogVerse Backend is running ");
@@ -27,3 +31,6 @@ mongoose.connect(process.env.MONGO_URI)
     console.error("MongoDB connection failed:", err.message);
     process.exit(1);
   });
+
+
+
