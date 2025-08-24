@@ -102,25 +102,25 @@ function PostDetail() {
             placeholder="Tags (comma separated)"
           />
           <button className="save-btn" onClick={handleUpdate}>
-            Save
+            💾 Save
           </button>
           <button className="cancel-btn" onClick={() => setEditMode(false)}>
-            Cancel
+            ❌ Cancel
           </button>
         </div>
       ) : (
         <div className="post-content">
           <h2>{post.title}</h2>
           <p>{post.content}</p>
-          <p className="author">Author: {post.author.username}</p>
-          <p className="tags">Tags: {post.tags.join(", ")}</p>
+          <p className="author">👤 Author: {post.author.username}</p>
+          <p className="tags">🏷️ Tags: {post.tags.join(", ")}</p>
           {isAuthor && (
             <div className="actions">
               <button className="edit-btn" onClick={() => setEditMode(true)}>
-                Edit
+                ✏️ Edit
               </button>
               <button className="delete-btn" onClick={handleDelete}>
-                Delete
+                🗑️ Delete
               </button>
             </div>
           )}
