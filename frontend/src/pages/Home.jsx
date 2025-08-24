@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <div>
-      <h1>BlogVerse</h1>
+      <h1>📖 ALL Posts</h1>
       <div className="posts-container">
         
         {posts.length === 0 && <p style={{ textAlign: "center", width: "100%" }}>No posts yet.</p>}
@@ -29,7 +29,7 @@ function Home() {
           <div key={post._id} className="post-card">
             <h2> 📝 {post.title}</h2>
             <p> 👤 By: {post.author?.username || "Unknown"}</p>
-            <p> 💬 {post.content?.substring(0, 100)}...</p>
+            <p> ✍️ {post.content?.substring(0, 100)}...</p>
             <Link to={`/post/${post._id}`} className="read-more">Read More ➡️</Link>
           </div>
         ))}

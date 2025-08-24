@@ -21,18 +21,18 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="logo">BlogVerse</Link>
+        <Link to="/" className="logo">🌌 BlogVerse</Link>
         <div className="nav-links">
-          <Link to="/">Home</Link>
+          <Link to="/"> 🏠 Home</Link>
           {token ? (
             <>
-              <Link to="/create">Create Post</Link>
-              <button className="logout-btn" onClick={handleLogout}>Logout</button>
+              <Link to="/create">✏️ Create Post</Link>
+              <button className="logout-btn" onClick={handleLogout}> 🚪 Logout</button>
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Link to="/login">🔑 Login</Link>
+              <Link to="/signup">🔐 Signup</Link>
             </>
           )}
         </div>

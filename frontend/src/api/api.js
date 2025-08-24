@@ -7,6 +7,12 @@ export const signup = async (userData) => {
   return res.data;
 };
 
+export const likePost = (id, token) =>
+  API.post(`/posts/${id}/like`, {}, { headers: { Authorization: `Bearer ${token}` } });
+
+export const addComment = (id, text, token) =>
+  API.post(`/posts/${id}/comment`, { text }, { headers: { Authorization: `Bearer ${token}` } });
+
 export const login = async (userData) => {
   const res = await axios.post(`${BASE_URL}/auth/login`, userData);
   return res.data;
