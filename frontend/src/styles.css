@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 300% 300%;
+  animation: gradientMove 10s infinite alternate;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: left top; }
+  100% { background-position: right bottom; }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateX(0) rotateY(0) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff6b6b, #f8e71c, #6bff95);
+  background-size: 300% 300%;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: btnGradient 5s infinite alternate;
+}
+
+.btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+@keyframes btnGradient {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+.glow {
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b, 0 0 40px #f8e71c;
+}
+

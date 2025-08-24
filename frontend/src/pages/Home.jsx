@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPosts } from "../api/api";
 import { Link } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -20,15 +21,18 @@ function Home() {
   return (
     <div>
       <h1>BlogVerse</h1>
-      <Link to="/create">+ Create New Post</Link>
-      {posts.length === 0 && <p>No posts yet.</p>}
-      {posts.map((post) => (
-        <div key={post._id} style={{ margin: "20px 0" }}>
-          <h2>{post.title}</h2>
-          <p>By: {post.author?.username || "Unknown"}</p>
-          <Link to={`/post/${post._id}`}>Read More</Link>
-        </div>
-      ))}
+      <div className="posts-container">
+        
+        {posts.length === 0 && <p style={{ textAlign: "center", width: "100%" }}>No posts yet.</p>}
+        {posts.map((post) => (
+          <div key={post._id} className="post-card">
+            <h2>{post.title}</h2>
+            <p>By: {post.author?.username || "Unknown"}</p>
+            <p>{post.content?.substring(0, 100)}...</p>
+            <Link to={`/post/${post._id}`}>Read More</Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

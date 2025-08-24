@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { createPost } from "../api/api";
 import { useNavigate } from "react-router-dom";
+import "./CreatePost.css";
 
 function CreatePost() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ title: "", content: "", tags: "" });
+  const [form, setForm] = useState({ title: "", content: "", tags: "", coverImage: "" });
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
@@ -30,9 +31,9 @@ function CreatePost() {
   };
 
   return (
-    <div>
+    <div className="create-container">
       <h2>Create Post</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
           name="title"
@@ -46,6 +47,7 @@ function CreatePost() {
           placeholder="Content"
           value={form.content}
           onChange={handleChange}
+          rows="6"
           required
         />
         <input
@@ -54,6 +56,7 @@ function CreatePost() {
           value={form.tags}
           onChange={handleChange}
         />
+        
         <button type="submit">Create</button>
       </form>
     </div>

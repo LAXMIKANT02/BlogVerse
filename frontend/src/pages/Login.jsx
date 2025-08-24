@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { login } from "../api/api";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -23,12 +24,26 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <h2>Login</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red", textAlign: "center", marginBottom: "1rem" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} required />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
+          required
+        />
         <button type="submit">Login</button>
       </form>
     </div>

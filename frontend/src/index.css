@@ -1,18 +1,74 @@
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #222;
+    line-height: 1.6;
+    perspective: 1000px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
+h1, h2, h3 {
+    color: #222;
+    font-weight: 700;
 }
 
 a {
-  text-decoration: none;
-  color: blue;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+}
+
+input, textarea {
+    font-family: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+button, .btn {
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+}
+
+.shadow-3d {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.shadow-3d:hover {
+    transform: translateY(-8px) rotateX(3deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.text-center {
+    text-align: center;
 }
